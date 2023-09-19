@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{johd}
+\usepackage[hydelinks]{hyperref}
+
+\title{Tema 1. Introducción a JEE}
+
+\author{José Antonio Fajardo Naranjo \\
+	\small
+	\tt{fajardonaranjoja@gmail.com} \\
+	\date{}
+}
+
+\begin{document}
+	\maketitle
+	\begin{abstract} 
+		\noindent Estos apuntes pertenecen al tema de la asignatura impartida en el 2ndo curso de GS de DAW en el IES Martín Rivero durante el curso 2023/2024  \end{abstract}
+	
+	\tableofcontents
+	\newpage{\ }
+	\thispagestyle{empty}
+	
+	\section{Introducción}
+	
+	\paragraph{}La \textbf{tecnología JEE} (Java Enterprise Edition) se presenta como una solución propuesta por Sun Microsystems para el desarrollo de aplicaciones distribuidas. Se \textbf{basa} en el lenguaje básico Java, también conocido como \textbf{JSE} (Java Standard Edition). JEE se puede considerar como una \textbf{normativa} que describe todos los elementos que constituyen e intervienen para el funcionamiento de una aplicación distribuida.
+	\\
+	\\
+	Define:
+	\begin{itemize}
+		\item Cómo se deben \textbf{desarrollar} los diferentes componentes de una aplicación (servlet, páginas JSP...).
+		\item Cómo se deben \textbf{comunicar} con ellos o con otras aplicaciones (JDBC, JavaMail...).
+		\item Cómo deben \textbf{organizarse} estos componentes para construir una aplicación (descriptor de despliegue).
+		\item Las \textbf{restricciones} que tienen que respetar los servidores encargados de albergar estas aplicaciones.
+	\end{itemize}
+	\paragraph{}El cumplimiento de esta normativa permite el desarrollo de servidores para las aplicaciones que respeten esta normativa, habiendo varios disponibles con rendimiento, capacidad y precio diferente.
+	\\
+	\\
+	La \textbf{ventaja} que ofrece JEE con \textbf{relación a tecnologías propietarias} (software privativo) reside en que cabe la posibilidad de evolucionar a otro servidor con más rendimiento sin necesidad de grandes modificaciones en la aplicación.
+	
+	\section{Servidores Web y servidores de aplicaciones}
+	
+	\paragraph{}Un \textbf{servidor Web es un servidor de archivos}. Los clientes se dirigen a él mediante el \textbf{protocolo HTTP} para obtener un recurso. Cuando el servidor Web recibe la petición HTTP, extrae de la petición el recurso solicitado, lo busca en el disco y envía el recurso dentro de la respuesta HTTP para devolverlo al cliente. Esto se resume en que el \textbf{servidor Web no realiza ningún tipo de tratamiento} en el recurso antes de transmitirlo, no importando el tipo de recurso que le es solicitado.
+	Este servidor se usa para recursos \textbf{estáticos}.
+	\\
+	\\
+	La función de un \textbf{servidor de aplicaciones} es la de \textbf{alojar el código} y \textbf{ejecutarlo} para, posteriormente, mediante el protocolo HTTP, \textbf{devolver} el resultado de la \textbf{ejecución} del código alojado de vuelta al cliente. Este servidor se utiliza para recursos \textbf{dinámicos}.
+	\\
+	\\
+	La \textbf{diferencia} entre el servidor Web y el de aplicaciones radica en esto, en que, mientras el \textbf{servidor Web} sólo se dedica a \textbf{enviar archivos} indistintamente según sea solicitado por el cliente, el \textbf{servidor de aplicaciones} se encarga de \textbf{ejecutarlo} en lugar del cliente devolviendo el resultado de la ejecución como texto plano.
+	
+\end{document}
