@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.9.19)  20 SEP 2023 00:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.9.19)  20 SEP 2023 13:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -366,7 +366,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--40
 
  []
 
-<images/diagramaclienteservidores1.drawio.png, id=29, 563.10374pt x 201.75375pt
+<images/diagramaclienteservidores1.drawio.png, id=31, 563.10374pt x 201.75375pt
 >
 File: images/diagramaclienteservidores1.drawio.png Graphic file (type png)
 <use images/diagramaclienteservidores1.drawio.png>
@@ -374,13 +374,13 @@ Package pdftex.def Info: images/diagramaclienteservidores1.drawio.png  used on
 input line 54.
 (pdftex.def)             Requested size: 337.86485pt x 121.05318pt.
 [3]
-<images/diagramaclienteservidores2.png, id=41, 553.06625pt x 191.71625pt>
+<images/diagramaclienteservidores2.png, id=43, 553.06625pt x 191.71625pt>
 File: images/diagramaclienteservidores2.png Graphic file (type png)
 <use images/diagramaclienteservidores2.png>
 Package pdftex.def Info: images/diagramaclienteservidores2.png  used on input l
 ine 62.
 (pdftex.def)             Requested size: 331.8423pt x 115.03062pt.
-<images/diagramaclienteservidores3.png, id=42, 753.81625pt x 402.50375pt>
+<images/diagramaclienteservidores3.png, id=44, 753.81625pt x 402.50375pt>
 File: images/diagramaclienteservidores3.png Graphic file (type png)
 <use images/diagramaclienteservidores3.png>
 Package pdftex.def Info: images/diagramaclienteservidores3.png  used on input l
@@ -406,7 +406,7 @@ s been already used, duplicate ignored
 l.77 	
        <./images/diagramaclienteservidores1.drawio.png> <./images/diagramaclien
 teservidores2.png> <./images/diagramaclienteservidores3.png>]
-<images/elementosjee.png, id=55, 152.06813pt x 104.64093pt>
+<images/elementosjee.png, id=57, 152.06813pt x 104.64093pt>
 File: images/elementosjee.png Graphic file (type png)
 <use images/elementosjee.png>
 Package pdftex.def Info: images/elementosjee.png  used on input line 95.
@@ -416,17 +416,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.109 \end{document}
-                     <./images/elementosjee.png>] (Introduccion_JEE.aux
+l.112 	
+        <./images/elementosjee.png>] [6] (Introduccion_JEE.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 ) ) 
 Here is how much of TeX's memory you used:
- 10545 strings out of 476331
- 170928 string characters out of 5787765
+ 10551 strings out of 476331
+ 170994 string characters out of 5787765
  1862660 words of memory out of 5000000
- 30819 multiletter control sequences out of 15000+600000
- 517009 words of font info for 48 fonts, out of 8000000 for 9000
+ 30820 multiletter control sequences out of 15000+600000
+ 517316 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,7n,90p,969b,448s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/bypro/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
@@ -438,9 +438,9 @@ TeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/bypro/AppData/Local/Prog
 rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/bypro/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/bypro/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on Introduccion_JEE.pdf (5 pages, 174671 bytes).
+Output written on Introduccion_JEE.pdf (6 pages, 178138 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 32 named destinations out of 1000 (max. 500000)
+ 124 PDF objects out of 1000 (max. 8388607)
+ 37 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
