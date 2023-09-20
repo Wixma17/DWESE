@@ -24,3 +24,14 @@
 \contentsline {paragraph}{}{6}{section*.19}%
 \contentsline {paragraph}{}{6}{section*.20}%
 \contentsline {subsection}{\numberline {5.1}Creación de un empaquetado}{6}{subsection.5.1}%
+\contentsline {paragraph}{}{6}{section*.21}%
+\contentsline {subsection}{\numberline {5.2}Visualización del contenido}{6}{subsection.5.2}%
+\contentsline {paragraph}{}{6}{section*.22}%
+\contentsline {paragraph}{}{6}{section*.23}%
+\contentsline {paragraph}{}{6}{section*.24}%
+\contentsline {subsection}{\numberline {5.3}Extracción}{6}{subsection.5.3}%
+\contentsline {paragraph}{}{6}{section*.25}%
+\contentsline {paragraph}{}{6}{section*.26}%
+\contentsline {subsection}{\numberline {5.4}Actualización}{7}{subsection.5.4}%
+\contentsline {paragraph}{}{7}{section*.27}%
+\contentsline {paragraph}{}{7}{section*.28}%

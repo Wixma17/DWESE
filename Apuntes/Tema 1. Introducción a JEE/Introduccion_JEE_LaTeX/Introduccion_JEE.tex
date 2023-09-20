@@ -110,14 +110,61 @@
 	
 	\paragraph{}Para facilitar el despliegue de una aplicación se puede incluir todo el conjunto de archivos necesarios para el funcionamiento de la aplicación en un archivo empaquetado Java (.jar o .war). Este archivo con extensión .war se despliega automáticamente en el servidor.
 	
-	\paragraph{}La manipulación de un archivo empaquetado Java utilizan la sintaxis de manipulación de archivos muy similar a Unix. Estos se epaquetan internamente en formato ZIP.
+	\paragraph{}La manipulación de un archivo empaquetado Java utiliza la sintaxis de manipulación de archivos muy similar a Unix. Estos se epaquetan internamente en formato ZIP.
 	
 	\subsection{Creación de un empaquetado}
 	
-	\paragraph{}La estructura del comando para crear un empaquetado en Java es la siguiente:
+	\paragraph{}Es importante que antes de empaquetar se apague el servidor, ya que al hacerlo, automáticamente desplegará la aplicación desde ese empaquetado, pudiendo corromper la aplicación. La estructura para poder empaquetar una aplicación JEE es la siguiente:
 	
-	\begin{centering}
-		\texttt{}
-	\end{centering}
+	\begin{center}
+		\texttt{jar cfv program.war -C program/ .}
+	\end{center}
+
+	\begin{itemize}
+		\item El parámetro ``c'' sirve para indicar al comando jar que se desea crea<r un empaquetado.
+		\item El parámetro ``f'', por su parte, indica que el comando tiene que generar un archivo.
+		\item La tercera parte, el parámetro ``v'' muestra el nombre de los archivos a medida que se van añadiendo al empaquetado.
+		\item Si queremos añadir más de un archivo ponemos los nombres separados por un espacio. El carácter comodín `*' también está permitido en la lista. Si un nombre de directorio está presente en la lista, todo su contenido se añade al empaquetado.
+	\end{itemize} 
+	
+	\subsection{Visualización del contenido}
+	
+	\paragraph{}El contenido de un empaquetado puede visualizarse con el comando siguiente:
+	
+	\begin{center}
+		\texttt{jar tf nombre.war}
+	\end{center}
+	
+	\paragraph{}El comando muestra en consola el contenido del empaquetado. Se puede obtener información adicional, como la fecha de modificación y el tamaño del archivo, añadiendo la opción v al comando:
+	
+	\begin{center}
+		\texttt{jar tvf nombre.war}
+	\end{center}
+	
+	\paragraph{}Las rutas de acceso a los archivos, al estar en Windows, se muestran con el carácter / como separador, siendo relativas a la raíz del archivo. El contenido del empaquetado no es modificado por la ejecución del comando, ya que solo lo estamos visualizando.
+	
+	\subsection{Extracción}
+	
+	\paragraph{}Los archivos pueden ser extraídos del empaquetado con el siguiente comando:
+
+	\begin{center}
+		\texttt{jar xvf nombre.war}
+	\end{center}
+	
+	\paragraph{}Al extraer estos archivos se crean en disco en el directorio actual, sobreescribiendo los existentes que puedan ser reemplazados. No hay modificación de los archivos que se encuentran en el empaquetado. Si el archivo contiene una ruta, se crea de nuevo en el directorio actual. Podemos ser más específicos, extrayendo únicamente un archivo concreto del .war. A continuación un ejemplo con el archivo web.xml:
+	
+	\begin{center}
+		\texttt{jar xvf nombre.war WEB-INF/web.xml}
+	\end{center}
+	
+	\subsection{Actualización}
+	
+	\paragraph{}El contenido de un empaquetado se puede actualizar mediante la adición de archivos después de su creación. El comando es el siguiente:
+	
+	\begin{center}
+		\texttt{jar uf nombre.war imágenes/logo.gif}
+	\end{center}
+	
+	\paragraph{}El último parámetro de este comando representa la lista de archivos que se actualizarán en el archivo. Si estos archivos no existían se añaden, en caso contrario, se reemplazan por la nueva versión. Si el empaquetado contiene directorios, la ruta de acceso completa tiene que especificarse en la lista de archivos que se añadirán.
 	
 \end{document}
