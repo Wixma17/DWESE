@@ -139,10 +139,78 @@
 			\texttt{GET /index.php HTTP/1.1\\
 			Referer: http://www.eni-ecole.fr/}
 		\end{center}
-		\item User-Agent: esta cabecera permite identificar el tipo de navegador en el origen de la petición, pudiendo utilizarse para realizar estadísticas o permitir al servidor optimizar el código enviado en función del tipo de navegador (especie de firma del navegador). Ejemplo:
+		\item \texttt{User-Agent}: esta cabecera permite identificar el tipo de navegador en el origen de la petición, pudiendo utilizarse para realizar estadísticas o permitir al servidor optimizar el código enviado en función del tipo de navegador (especie de firma del navegador). Ejemplo:
 		\begin{center}
-			\texttt{poner ejemplo}
+			\texttt{User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0;\\
+			SKCC1; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.5.21022; .NET\\
+			CLR 1.1.4322; .NET CLR 3.5.30729; .NET CLR 3.0.3061)}
 		\end{center}
 	\end{itemize}
+	
+	\section{Las respuestas HTTP}
+	
+	\paragraph{}Después de la recepción y tratamiento de una petición HTTP, el servidor genera una respuesta HTTP para transmitir el recurso solicitado al cliente. La estructura de esta respuesta es similar a la de la petición HTTP. Se compone de dos partes, la cabecera y el cuerpo, que se separan por una línea en blanco. También hay respuestas sin cuerpo. La primera línea de la parte de la cabecera ejerce una función específica debido a que esta línea se dedica al estado de la respuesta, definiendo el tipo de la misma, gracias al valor numérico correspondiente al código de estado de la respuesta que tiene en su interior.
+	
+	\subsection{Tipos de respuestas HTTP}
+	
+	\paragraph{}Las respuestas se organizan en 5 categorías según la primera cifra del código de estado. A continuación se muestran las distintas categorías y los más vistos de cada una de ellas:
+	\begin{itemize}
+		\item \textbf{1XX}: información.
+			\subitem \textbf{\textit{100 continúa}}: el servidor genera esta respuesta cuando recibe una petición HTTP en varias partes. El cliente necesita esta respuesta para saber que el comienzo de la petición se ha recibido satisfactoriamente y que el servidor está a la espera de continuación.
+		\item \textbf{2XX}: éxito.
+			\subitem \textbf{\textit{200 OK}}: ésta es la respuesta más frecuente generada por los servidores, indica que se ha tratado correctamente la petición.
+			\subitem \textbf{\textit{201 creado}}: es generada por el servidor cuando se ha creado un recurso correctamente en el servidor mediante una petición HTTP de tipo PUT.
+			\subitem \textbf{\textit{204 sin contenido}}: es generada por el servidor cuando genera una respuesta sin cuerpo, es decir, solamente con cabecera de respuesta HTTP.
+		 \item \textbf{3XX}: redirección.
+		 	\subitem \textbf{\textit{301 movimiento permanente}}: el recurso solicitado por el cliente se encuentra ahora en otra ubicación, que se indica en la cabecera ``location''.
+		 	\subitem \textbf{\textit{302 movimiento temporal}}: el recurso solicitado por el cliente se encuentra temporalmente en otra ubicación, devuelta en un enlace de hipertexto hacia la nueva ubicación.
+		 	\subitem \textbf{\textit{304 sin modificar}}: es generada por el servidor al recibir una petición condicional del cliente, indicando que el recurso presente en el servidor es idéntico al que ya está disponible en el cliente.
+		 \item \textbf{4XX}: error provocado por el cliente.
+		 	\subitem \textbf{\textit{400 petición incorrecta}}: la sintaxis de la petición HTTP es incorrecta.
+		 	\subitem \textbf{\textit{401 no autorizado}}: el acceso al recurso solicitado requiere la autenticación del cliente.
+		 	\subitem \textbf{\textit{403 acceso prohibido}}: el acceso al recurso está prohibido.
+		 	\subitem\textbf{\textit{404 no encontrado}}: el recurso solicitado no se ha encontrado.
+		 	\subitem \textbf{\textit{405 método no admitido}}: este tipo de petición HTTP utilizado para acceder al recurso no está admitido.
+		 	\subitem \textbf{\textit{407 autenticación proxy}}: un servidor proxy envía este tipo de respuesta cuando requiere la autenticación del cliente antes de transmitir la petición a un servidor.
+		 \item \textbf{5XX}: provocado por el servidor.
+		 	\subitem \textbf{\textit{500 error interno del servidor}}: un problema de funcionamiento impide al servidor tratar con éxito la petición.
+		 	\subitem \textbf{\textit{503 servicio no disponible}}: una sobrecarga del servidor impide tratar la petición.
+		 	\subitem \textbf{\textit{505 versión HTTP no compatible}}: el servidor no puede utilizar la versión del protocolo HTTP especificada en la petición.
+	\end{itemize}
+	
+	\subsection{Las cabeceras de respuesta}
+	
+	\paragraph{}El servidor genera las cabeceras de respuesta cuando construye la respuesta HTTP. Cada tipo de servidor tiene su propia técnica para construir una respuesta HTTP y las cabeceras no son necesariamente las mismas entre servidores. Hay un conjunto que bien se puede llegar a considerar estándar y aparecen prácticamente siempre en una respuesta HTTP. Las cabeceras se usan principalmente para proporcionar al navegador información adicional acerca de la respuesta. A continuación se muestran las más frecuentes:
+	
+	\begin{itemize}
+		\item \texttt{location}: esta cabecera de respuesta se encuentra en respuestas HTTP de redirección (3XX) para indicar la nueva ubicación donde se encuentra el recurso solicitado.
+		\item \texttt{server}: esta cabecera de respuesta contiene información acerca del tipo de servidor que ha generado la respuesta.
+		\item \texttt{via}: esta cabecera de respuesta se añade a la respuesta de origen realizada por el servidor cuando la respuesta ha pasado por un servidor proxy.
+		\item \texttt{retry-after}: esta cabecera de respuesta se encuentra principalmente en las respuestas HTTP de tipo 503 (servicio no disponible) para indicar la duración estimada de la no disponibilidad del servidor. Esta duración se expresa en segundos de espera o con una fecha y hora a partir de la cual el cliente podrá reformular la petición.
+		\item \texttt{proxy-authenticate}: este tipo de cabecera es incluida por un servidor proxy en una respuesta HTTP 407. Indica el método de autenticación esperado por el servidor proxy. El navegador utiliza esta información para reformular la petición que contiene los datos de autenticación del usuario, añadiendo la cabecera de la petición proxy-authorization con los datos del usuario a la cabecera de la nueva petición que ha generado.
+		\item \texttt{allow}: este tipo de cabecera se encuentra en las respuestas HTTP 405 (método no admitido) para indicar los métodos HTTP aceptados para acceder a un recurso determinado.
+		\item \texttt{connection}: esta cabecera es de la versión 1.1 del protoclo HTTP. Indica cómo se tiene que gestionar la conexión TCP una vez el cliente ha recibido la respuesta.
+		\item \texttt{content-encoding}: esta cabecera indica el método de compresión utilizado por los datos contenidos en el cuerpo de la respuesta HTTP.
+		\item \texttt{content-language}:esta cabecera indica el idioma del documento contenido en el cuerpo de la respuesta HTTP
+		\item \texttt{content-length}: esta cabecera indica el número de bytes contenidos en el cuerpo de la respuesta HTTP.
+		\item \texttt{content-MD5}: esta cabecera permite la verificación de la integridad del contenido de la respuesta. La firma MD5 calculada por el servidor sobre el cuerpo de la respuesta se añade a continuación de la misma con esta cabecera. El cliente realiza la misma operación cuando recibe la respuesta y compara los resultados para comprobar una posible alteración de la respuesta durante la transferencia.
+		\item \texttt{content-type}: esta cabecera indica el tipo MIME (Multipurpose Internet Mail Extensions) del documento contenido en la respuesta. Ciertos navegadores la necesitan para poder interpretar correctamente la respuesta, que si no está hace que se trate la respuesta como texto en bruto.
+		\item \texttt{date}: esta cabecera contiene la fecha y la hora de generación de la respuesta HTTP.
+		\item \texttt{last-modified}: esta cabecera contiene la fecha y la hora de la última modificación del recurso en el servidor.
+		\item \texttt{WWW-authenticate}: este tipo de cabecera se incluye en las respuestas HTTP 401 (no autorizado) para reclamar al cliente los datos de su identidad. Por norma general, los navegadores muestran automáticamente un cuadro de diálogo que permite al usuario introducir un nombre y contraseña, siendo la validación de este cuadro la que provoca nuevamente el envío de una petición HTTP hacia el servidor con los datos recopilados.
+	\end{itemize}
+	
+	\section{Gestión del almacenamiento en caché}
+	
+	\paragraph{}Generalmente en una aplicación, el contenido de algunos recursos cambia con muy poca frecuencia. Para optimizar las transferencias entre cliente y servidor, el navegador puede almacenar temporalmente estos recursos. Cuando tiene que realizar de nuevo una petición HTTP para obtener uno de estos recursos, puede usar la versión que ha almacenado localmente en vez de contactar de nuevo con el servidor, no sin antes asegurarse previamente de que la versión del recurso que mantiene localmente es válidad. Con técnicas como la petición condicional o la realización previa de una petición HEAD para obtener la parte de la cabecera de la respuesta HTTP por parte del servidor.
+	
+	\subsection{Gestión realizada por el cliente}
+	
+	\paragraph{}Hay varias cabeceras de petición HTTP para darle un carácter condicional a una petición HTTP. Lleva generalmente una fecha o identificador asociado al recurso.
+	\paragraph{}La primera solución para el navegador consiste en añadir la cabecera if-modified-since seguida de la fecha y hora de creación del recurso que ya tiene en caché. De este modo, solicita al servidor que le transfiera el recurso si ha sido modificado posteriormente a esta fecha. Si es el caso, el servidor devuelve al cliente el recurso en una respuesta HTTP 200. Si el recurso no se ha modificado en el servidor desde esa fecha, éste genera una respuesta HTTP 304 y el navegador utiliza la versión del recurso que ya tenía en la memoria caché.
+	
+	\paragraph{}La segunda solución usa además una etiqueta asociada por el servidor al recurso, modificando este último el valor de la etiqueta en cada modificación del recurso.
+	
+	\paragraph{}Para generar este tipo de petición, el navegador añade la cabecera if-none-match seguida de la etiqueta correspondiente a la versión del recurso que tiene en caché. Como sucede con la anterior solución, el servidor devuelve al cliente el recurso si no tiene la misma versión, si por el contrario la tiene, genera una respuesta HTTP 304.
 	
 \end{document}
