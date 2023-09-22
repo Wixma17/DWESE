@@ -8,3 +8,10 @@
 \contentsline {subsection}{\numberline {1.2}Las URL}{4}{subsection.1.2}%
 \contentsline {paragraph}{}{4}{section*.6}%
 \contentsline {paragraph}{}{5}{section*.7}%
+\contentsline {section}{\numberline {2}Las peticiones HTTP}{5}{section.2}%
+\contentsline {paragraph}{}{5}{section*.8}%
+\contentsline {subsection}{\numberline {2.1}Los distintos tipos de petición}{5}{subsection.2.1}%
+\contentsline {paragraph}{}{5}{section*.9}%
+\contentsline {paragraph}{}{5}{section*.10}%
+\contentsline {subsection}{\numberline {2.2}Las cabeceras de petición}{5}{subsection.2.2}%
+\contentsline {paragraph}{}{5}{section*.11}%

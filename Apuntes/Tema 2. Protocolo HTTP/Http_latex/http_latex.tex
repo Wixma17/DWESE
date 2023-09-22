@@ -84,4 +84,65 @@
 		\end{tabular}
 	\end{table}
 	
+	\section{Las peticiones HTTP}
+	
+	\paragraph{}Las peticiones HTTP comienzan el diálogo entre un navegador (cliente) y un servidor Web. El navegador, por norma general, construye la petición HTTP en función de los datos contenidos en una página HTML. Todas las cabeceras de una petición comienzan por una línea con el mismo formato, contiene el tipo de la petición HTTP seguido del identificador del recurso solicitado y finaliza con la versión del protocolo HTTP (HTTP/1.1).
+	
+	\subsection{Los distintos tipos de petición}
+	
+	\paragraph{}La versión 1.0 del protocolo HTTP disponía de 3 tipos de petición HTTP:
+	
+	 \begin{itemize}
+	 	\item GET: permite obtener un recurso disponible en el servidor. Es el tipo que se genera por defecto. No tiene ningún tipo de dato en el cuerpo de la petición y si necesita enviar parámetros al servidor se añaden a continuación de la URL.
+	 	\item POST: se destina al envío al servidor de datos recopilados en formularios HTML. Presenta ventajas con respecto al método GET.
+	 		\subitem No hay límite teórico de cantidad de información que se envía, porque se inserta en el cuerpo de la petición en lugar de en la cabecera.
+	 		\subitem No se ven los datos en la barra de dirección del navegador, por lo cual existe más privacidad.
+	 	\item HEAD: funciona como la petición GET, salvo porque el servidor no devuelve nada en el cuerpo de la respuesta HTTP. Los navegadores lo utilizan para la gestión del almacenamiento en caché de datos.
+	 \end{itemize}
+	
+	\paragraph{}La versión 1.1 de protocolo HTTP añade nuevos tipos de petición.
+	
+	\begin{itemize}
+		\item La petición PUT permite enviar un recurso al servidor para que éste lo guarde de forma permanente.
+		\item La petición DELETE permite solicitar la eliminación de un recurso determinado.
+		\item La petición TRACE permite solicitar al servidor la devolución en el cuerpo de la respuesta HTTP de una copia de la petición HTTP que acaba de recibir.
+		\item La petición OPTIONS permite obtener datos sobre las opciones que se pueden utilizar para obtener un recurso.
+	\end{itemize}
+	
+	\subsection{Las cabeceras de petición}
+	
+	\paragraph{}El cliente (navegador) añade las cabeceras de petición en el momento en que construye la petición HTTP. Cada tipo de navegador construye y ordena la cabecera de la petición HTTP de manera diferente. La función de estas es la de proporcionar al servidor información adicional acerca de la petición. Hay algunas que se consideran estándar y aparecen en todas las peticiones. Entre las más comunes se destacan:
+	
+	\begin{itemize}
+		\item \texttt{Accept}: esta cabecera permite indicar al servidor qué tipos de datos se aceptan como respuesta. El formato en el que se tienen que indicar este tipo de datos es el MIME (Multipurpose Internet Main Extensions). Si el navegador no tiene ninguna preferencia, puede añadir la cabecera siguiente:
+		\begin{center}
+			\texttt{Accept: */*}
+		\end{center}
+		\item \texttt{Accept-Charset}: esta cabecera indica las preferencias respecto al juego de caracteres que puede usar el servidor para construir la respuesta HTTP. Ejemplo:
+		\begin{center}
+			\texttt{Accept-Charset: ISO-8559-1,utf-8}
+		\end{center}
+		\item \texttt{Accept-Encoding}: esta cabecera indica al servidor en qué lengua prefiere obtener el recurso solicitado. Ejemplo:
+		\begin{center}
+			\texttt{Accept-Language: es,en}
+		\end{center}
+		\item \texttt{Connection}: esta cabecera es de la versión 1.1 de HTTP. Determina cómo se comportarán las conexiones TCP utilizadas para la petición y la respuesta. Si el navegador desea mantener la conexión abierta puede añadir valor keep-alive para la cabecera. Por el contrario, con el valor close la conexión se cierra. Ejemplo:
+		\begin{center}
+			\texttt{Connection: keep-alive}
+		\end{center}
+		\item \texttt{Host}: esta cabecera de la versión 1.1 del protocolo HTTP especifica el FQDN (Fully Qualified Domain Name) y el número del puerto del servidor que aloja el recurso solicitado. Este nombre puede corresponder a un servidor físico o a uno virtual. Siempre es necesario que pueda transformarse en una dirección IP para que el protocolo TCP pueda transportar la petición HTTP. En caso de que se usen servidores virtuales hay varios FQDN con la misma dirección IP. La referencia hacia el servidor virtual adecuado se realiza con esta cabecera. 
+		\begin{center}
+			\texttt{Host: www.eni-ecole.fr}
+		\end{center}
+		\item \texttt{Referer}: esta cabecera contiene la URL del documento a partir del cual la petición HTTP ha sido generada. Se informa cuando una petición HTTP se construye después de la activación de un enlace de hipertexto o de la validación de un formulario. Ejemplo:
+		\begin{center}
+			\texttt{GET /index.php HTTP/1.1\\
+			Referer: http://www.eni-ecole.fr/}
+		\end{center}
+		\item User-Agent: esta cabecera permite identificar el tipo de navegador en el origen de la petición, pudiendo utilizarse para realizar estadísticas o permitir al servidor optimizar el código enviado en función del tipo de navegador (especie de firma del navegador). Ejemplo:
+		\begin{center}
+			\texttt{poner ejemplo}
+		\end{center}
+	\end{itemize}
+	
 \end{document}
