@@ -213,4 +213,17 @@
 	
 	\paragraph{}Para generar este tipo de petición, el navegador añade la cabecera if-none-match seguida de la etiqueta correspondiente a la versión del recurso que tiene en caché. Como sucede con la anterior solución, el servidor devuelve al cliente el recurso si no tiene la misma versión, si por el contrario la tiene, genera una respuesta HTTP 304.
 	
+	\subsection{Gestión realizada por el servidor}
+	
+	\paragraph{}El servidor es el encargado de añadir a la cabecera de la respuesta la información necesaria. Esta información se transmite con las siguientes cabeceras:\\
+	
+	\begin{itemize}
+		\item \texttt{date}: esta cabecera contiene la fecha y hora de generación de la respuesta HTTP. El navegador la utiliza como referencia para realizar peticiones HTTP condicionales.
+		\item \texttt{Etag}: esta cabecera representa el valor de la etiqueta asociada por el servidor al recurso cuando se transmite al cliente.
+		\item \texttt{expires}: esta cabecera se indica al navegador hasta cuando puede conservar en caché el recurso enviado. Cuando termina ese tiempo, el navegador tiene que realizar una nueva petición HTTP si necesita usar el recurso de nuevo.
+	\end{itemize} 
+	
+	\paragraph{}El servidor también puede impedir el almacenamiento en caché de un recurso por el navegador añadiendo la cabecera de respuesta \texttt{cache-control} con el valor \texttt{no-cache}
+	
+	\paragraph{}Se explica todo de manera más detallada en la norma RFC2616.
 \end{document}

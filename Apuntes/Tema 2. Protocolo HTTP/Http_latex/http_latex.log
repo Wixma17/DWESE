@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.9.19)  22 SEP 2023 18:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.9.19)  23 SEP 2023 12:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -672,12 +672,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout4 = `http_latex.toc'.
 
  [2]
-<images/peticionhttp.PNG, id=46, 285.31593pt x 112.16907pt>
+<images/peticionhttp.PNG, id=48, 285.31593pt x 112.16907pt>
 File: images/peticionhttp.PNG Graphic file (type png)
 <use images/peticionhttp.PNG>
 Package pdftex.def Info: images/peticionhttp.PNG  used on input line 42.
 (pdftex.def)             Requested size: 142.65761pt x 56.08438pt.
-<images/respuestahttp.png, id=48, 867.24pt x 690.32906pt>
+<images/respuestahttp.png, id=50, 867.24pt x 690.32906pt>
 File: images/respuestahttp.png Graphic file (type png)
 <use images/respuestahttp.png>
 Package pdftex.def Info: images/respuestahttp.png  used on input line 48.
@@ -694,14 +694,18 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.85 	\end{table}
-                  <./images/respuestahttp.png>] [5] [6] [7] [8] [9]
-(http_latex.aux
+                  <./images/respuestahttp.png>] [5] [6] [7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+
+ []
+
+[9] (http_latex.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 ) ) 
 Here is how much of TeX's memory you used:
- 20917 strings out of 476331
- 395904 string characters out of 5787765
+ 20921 strings out of 476331
+ 395951 string characters out of 5787765
  1865660 words of memory out of 5000000
  40976 multiletter control sequences out of 15000+600000
  517843 words of font info for 51 fonts, out of 8000000 for 9000
@@ -719,9 +723,9 @@ rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/bypro/AppData
 s/bypro/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 ><C:/Users/bypro/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
 mtt9.pfb>
-Output written on http_latex.pdf (9 pages, 227609 bytes).
+Output written on http_latex.pdf (9 pages, 229385 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
+ 161 PDF objects out of 1000 (max. 8388607)
+ 46 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
